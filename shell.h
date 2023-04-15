@@ -13,23 +13,23 @@
 #include <time.h>
 #include <stdbool.h>
 
-/* */
+/* env variables */
 extern char **environ;
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 
 /* program parts || declaration */
-int analyser(char **command, char *buffer); /* analyser to see if it's built in function */
-void cue_user(void); /* cue the user to enter an input */
-void signal_mode(int mode); /* checks if it's in interactive mode */
-char **tokenizer(char *line_tkn); /* creates tokens from user input */
-char *validate_path(char **mypath, char *command); /* checks to validate path */
-char *append_path(char *path, char *command); /* appends path */
-int builtin(char **command, char *line); /* track handler */
-void exit_shell(char **command, char *line); /* exit() */
-void print_out(void); /* prints to stdout */
+int analyser(char **command, char *buffer);
+void cue_user(void);
+void signal_mode(int mode);
+char **tokenizer(char *line_tkn);
+char *validate_path(char **mypath, char *command);
+char *append_path(char *path, char *command);
+int command_builtin(char **command, char *commandpath);
+void exit_shell(char **command, char *line);
+void print_out(void);
 
 /* execution commands */
-void execution(char *cp, char **cmd); /* executes commands */
+void execution(char *cp, char **cmd);
 char *find_path(void);
 
 /* executes user input commands */
@@ -45,7 +45,7 @@ char *_strchr(char *str, char vn);
 /* */
 struct builtin
 {
-	char *env, *exit;
+	char *env, exit;
 } builtin;
 
 struct info
