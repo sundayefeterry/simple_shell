@@ -45,14 +45,12 @@ char *_strchr(char *str, char vn);
 /* */
 struct builtin
 {
-	char *env;
-	char *exit;
+	char *env, *exit;
 } builtin;
 
 struct info
 {
-	int final_exit;
-	int ln_count;
+	int final_exit, ln_count;
 } info;
 
 struct flags
