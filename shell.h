@@ -43,10 +43,10 @@ char *_strdup(char *str);
 char *_strchr(char *str, char vn);
 
 /* */
-struct builtin
+struct standardbuiltin
 {
-	char *env, exit;
-} builtin;
+	char *environment, *quit;
+} standardbuiltin;
 
 struct info
 {
