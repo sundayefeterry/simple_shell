@@ -1,7 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-/* std system libs */
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,34 +12,28 @@
 #include <time.h>
 #include <stdbool.h>
 
-/* env variables */
-extern char **environ;
-extern __sighandler_t signal(int __sig, __sighandler_t __handler);
-
 /* program parts || declaration */
 int analyser(char **command, char *buffer);
 void cue_user(void);
 void signal_mode(int mode);
 char **tokenizer(char *line_tkn);
 char *validate_path(char **mypath, char *command);
-char *append_path(char *path, char *command);
+char *create_new_path(char *newpath, char *command);
 int command_builtin(char **command, char *commandpath);
 void exit_shell(char **command, char *line);
 void print_out(void);
-
-/* execution commands */
-void execution(char *cp, char **cmd);
+void execution(char *exe, char **command);
 char *find_path(void);
-
-/* executes user input commands */
 void free_buffers(char **buf);
+int _checkingtrings(char *str1, char *str2);
+int _lenghtofstring(char *lng_str);
+int _compstring(char *str1, char *str2, int num);
+char *_duplicatestring(char *str);
+char *_stringcharacter(char *str, char strchar);
 
-/* all string handlers */
-int _strcmp(char *str1, char *str2);
-int _strlen(char *lng_str);
-int _strncmp(char *str1, char *str2, int num);
-char *_strdup(char *str);
-char *_strchr(char *str, char vn);
+extern char **environ;
+signal(int __sig, __sighandler_t __handler);
+extern __sighandler_t;
 
 /* */
 struct standardbuiltin
