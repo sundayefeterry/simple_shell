@@ -14,13 +14,13 @@ int command_builtin(char **command, char *commandpath)
 
 	int vall = 1;
 
-	if (_strcmp(*command, standardbuiltin.environment) == 0)
+	if (_checkingtrings(*command, standardbuiltin.environment) == 0)
 	{
 		print_out();
 		return (vall);
 	}
 
-	if (_strcmp(*command, standardbuiltin.quit) == 0)
+	if (_checkingtrings(*command, standardbuiltin.quit) == 0)
 	{
 		exit_shell(command, commandpath);
 		return (vall);

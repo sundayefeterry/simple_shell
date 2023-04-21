@@ -18,7 +18,7 @@ void cue_user(void);
 void signal_mode(int mode);
 char **tokenizer(char *line_tkn);
 char *validate_path(char **mypath, char *command);
-char *create_new_path(char *newpath, char *command);
+char *create_new_path(char *np, char *command);
 int command_builtin(char **command, char *commandpath);
 void exit_shell(char **command, char *line);
 void print_out(void);
@@ -32,8 +32,7 @@ char *_duplicatestring(char *str);
 char *_stringcharacter(char *str, char strchar);
 
 extern char **environ;
-signal(int __sig, __sighandler_t __handler);
-extern __sighandler_t;
+extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 
 /* */
 struct standardbuiltin
