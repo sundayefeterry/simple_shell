@@ -18,7 +18,7 @@ void cue_user(void);
 void signal_mode(int mode);
 char **tokenizer(char *line_tkn);
 char *validate_path(char **mypath, char *command);
-char *create_new_path(char *np, char *cmd);
+char *create_new_path(char *p, char *c);
 int command_builtin(char **command, char *commandpath);
 void exit_shell(char **command, char *line);
 void print_out(void);
