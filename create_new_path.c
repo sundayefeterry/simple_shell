@@ -1,27 +1,27 @@
 #include "shell.h"
 /**
- * create_new_path - integrate newpath[newpath] to input
+ * create_new_path - integrate np[np] to input
  * @command: user-specified input
- * @newpath: newpath of input
- * Return: newpath on success or NULL
+ * @np: np of input
+ * Return: np on success or NULL
  */
-char *create_new_path(char *newpath, char *command)
+char *create_new_path(char *np, char *command)
 {
 	size_t f = 0, s = 0;
 
 	if (!command)
 		command = "";
-	if (!newpath)
-		newpath = "";
+	if (!np)
+		np = "";
 
-	char *bfr = malloc(sizeof(char) * (_lnt_str(newpath) + _lnt_str(command) + 2));
+	char *bfr = malloc(sizeof(char) * (_len_str(np) + _len_str(command) + 2));
 
 	if (!bfr)
 		return (NULL);
-	while (newpath[f] != '\0')
-		bfr[f] = newpath[f];
+	while (np[f] != '\0')
+		bfr[f] = np[f];
 	f++;
-	if (newpath[f - 1] != '/')
+	if (np[f - 1] != '/')
 		bfr[f] = '/';
 	f++;
 	while (command[s] != '\0')

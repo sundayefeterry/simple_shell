@@ -18,7 +18,7 @@ void cue_user(void);
 void signal_mode(int mode);
 char **tokenizer(char *line_tkn);
 char *validate_path(char **mypath, char *command);
-char *create_new_path(char *newpath, char *command);
+char *create_new_path(char *np, char *command);
 int command_builtin(char **command, char *commandpath);
 void exit_shell(char **command, char *line);
 void print_out(void);
@@ -27,7 +27,7 @@ char *find_path(void);
 void free_buffers(char **buf);
 
 int _checkingtrings(char *str1, char *str2);
-int _lnt_str(char *lng_str);
+int _len_str(char *lng_str);
 int _compstring(char *str1, char *str2, int num);
 char *_duplicatestring(char *str);
 char *_stringcharacter(char *str, char strchar);
