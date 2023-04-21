@@ -24,10 +24,14 @@ char **tokenizer(char *line_tkn)
 	while (*ptr_buffer)
 	{
 		if (flg == 0 && _stringcharacter(delimiter, *ptr_buffer) != NULL)
+		{
 			ass_token_size++;
 			flg = 1;
+		}
 		if (flg == 1 && _stringcharacter(delimiter, *ptr_buffer) == NULL)
+		{
 			flg = 0;
+		}
 		ptr_buffer++;
 	}
 	tokens = malloc(sizeof(char *) * (ass_token_size + 1));
@@ -36,8 +40,10 @@ char **tokenizer(char *line_tkn)
 	{
 		tokens[x_index] = _duplicatestring(token_gen);
 		if (tokens[x_index] == NULL || tokens[x_index] == 0)
+		{
 			free(tokens);
 			return (NULL);
+		}
 		token_gen = strtok(NULL, delimiter);
 		x_index++;
 	}

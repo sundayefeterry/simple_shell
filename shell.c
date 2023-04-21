@@ -8,12 +8,13 @@
  * Return: 0
  */
 int main(int argcount, char **argvect, char *env[])
-{
-	(void)argvect, (void)env;
+{	
 	char *linecommand = NULL, *inpath = NULL, *commandpath = NULL;
 	char **command = NULL, **paths = NULL;
 	size_t buffersize = 0, sizeinline = 0;
 	int vl = 1, vall = -1;
+
+	(void)argvect, (void)env;
 
 	if (argcount < vl)
 		return (vall);
@@ -25,10 +26,9 @@ int main(int argcount, char **argvect, char *env[])
 		free(linecommand);
 		cue_user();
 		sizeinline = getline(&commandpath, &buffersize, stdin);
-		if (sizeinline >= 0)
-			info.ln_count++;
-		else
+		if (!sizeinline)
 			break;
+		info.ln_count++;
 		if (commandpath[sizeinline - vall] == '\n')
 			commandpath[sizeinline - vall] = '\0';
 		command = tokenizer(commandpath);
@@ -39,12 +39,12 @@ int main(int argcount, char **argvect, char *env[])
 		inpath = find_path();
 		paths = tokenizer(inpath);
 		linecommand = validate_path(paths, command[0]);
-		if (linecommand == false)
+		if (!linecommand)
 			perror(argvect[0]);
 		else
 			execution(linecommand, command);
 	}
-	if (sizeinline < 0 && flags.interactive)
+	if (!sizeinline && flags.interactive)
 		write(STDERR_FILENO, "\n", 1);
 	free(commandpath);
 	return (0);

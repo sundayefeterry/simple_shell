@@ -8,6 +8,7 @@
 int _checkingtrings(char *str1, char *str2)
 {
 	int input;
+	int output;
 
 	input = 0;
 
@@ -16,7 +17,7 @@ int _checkingtrings(char *str1, char *str2)
 		input++;
 	}
 
-	int output = (*(str1 + input) - *(str2 + input));
+	output = (*(str1 + input) - *(str2 + input));
 
 	return (output);
 }
@@ -61,21 +62,21 @@ int _compstring(char *str1, char *str2, int num)
 /**
  * _duplicatestring - this function dupicate string
  * @str: duplicated string
- * Return: *uplicated string
+ * Return: *duplicated string
  */
 char *_duplicatestring(char *str)
 {
 	char *ptr;
 	int input;
+	int len_t;
+	int val = 1;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	int len_t = _len_str(str);
-
-	int val = 1;
+	len_t = _len_str(str);
 
 	ptr = malloc(sizeof(char) * (len_t + val));
 

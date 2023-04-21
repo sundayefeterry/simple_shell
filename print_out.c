@@ -8,11 +8,9 @@ void print_out(void)
 {
 	int src;
 
+	char **env = environ;
+
 	src = 0;
-
-	char **env;
-
-	env = environ;
 
 	while (env[src])
 	{
