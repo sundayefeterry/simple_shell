@@ -27,6 +27,7 @@ char *create_new_path(char *np, char *command)
 	while (command[s] != '\0')
 		bfr[f + s] = command[s];
 	s++;
+
 	bfr[f + s] = '\0';
 
 	return (bfr);

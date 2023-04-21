@@ -11,12 +11,12 @@ char *find_path(void)
 
 	while (*env)
 	{
-		if (_strncmp(*env, "PATH=", 5) == 0)
+		if (_compstring(*env, "PATH=", 5) == 0)
 		{
 			path = *env;
-			while (*path && y < 5)		
+			while (*path && y < 5)
 				path++;
-				y++;
+			y++;
 			return (path);
 		}
 		env++;

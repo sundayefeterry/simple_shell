@@ -16,7 +16,7 @@ char *validate_path(char **mypath, char *command)
 
 	while (mypath[p])
 	{
-		print = append_path(mypath[p], command);
+		print = create_new_path(mypath[p], command);
 		if (access(print, F_OK | X_OK) == 0)
 		{
 			return (print);

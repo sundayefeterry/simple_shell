@@ -15,7 +15,7 @@ char **tokenizer(char *line_tkn)
 	size_t x_index = 0;
 	size_t flg = 0;
 
-	buffer = _strdup(line_tkn);
+	buffer = _duplicatestring(line_tkn);
 
 	if (buffer == NULL || buffer == 0)
 		return (NULL);
@@ -23,10 +23,10 @@ char **tokenizer(char *line_tkn)
 
 	while (*ptr_buffer)
 	{
-		if (flg == 0 && _strchr(delimiter, *ptr_buffer) != NULL)
+		if (flg == 0 && _stringcharacter(delimiter, *ptr_buffer) != NULL)
 			ass_token_size++;
 			flg = 1;
-		if (flg == 1 && _strchr(delimiter, *ptr_buffer) == NULL)
+		if (flg == 1 && _stringcharacter(delimiter, *ptr_buffer) == NULL)
 			flg = 0;
 		ptr_buffer++;
 	}
@@ -34,7 +34,7 @@ char **tokenizer(char *line_tkn)
 	token_gen = strtok(buffer, delimiter);
 	while (token_gen)
 	{
-		tokens[x_index] = _strdup(token_gen);
+		tokens[x_index] = _duplicatestring(token_gen);
 		if (tokens[x_index] == NULL || tokens[x_index] == 0)
 			free(tokens);
 			return (NULL);

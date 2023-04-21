@@ -6,15 +6,19 @@
  */
 void print_out(void)
 {
-	int y;
-	y = 0;
-	
-	char **env = environ;
+	int src;
 
-	while (env[y])
+	src = 0;
+
+	char **env;
+
+	env = environ;
+
+	while (env[src])
 	{
-		write(STDOUT_FILENO, (const void *)env[y], _strlen(env[y]));
+		write(STDOUT_FILENO, (const void *)env[src], _len_str(env[src]));
 		write(STDOUT_FILENO, "\n", 1);
-		y++;
+
+		src++;
 	}
 }
