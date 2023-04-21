@@ -6,14 +6,14 @@
 char *find_path(void)
 {
 	int src;
-	char **env = environ;
+	char **environment = environ;
 	char *path = NULL;
 
-	while (*env)
+	while (*environment)
 	{
-		if (_compstring(*env, "PATH=", 5) == 0)
+		if (_compstring(*environment, "PATH=", 5) == 0)
 		{
-			path = *env;
+			path = *environment;
 			while (*path && src < 5)
 			{
 				path++;
@@ -21,7 +21,7 @@ char *find_path(void)
 			}
 			return (path);
 		}
-		env++;
+		environment++;
 	}
 	return (NULL);
 }

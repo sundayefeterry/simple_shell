@@ -17,18 +17,18 @@ char **tokenizer(char *line_tkn)
 
 	buffer = _duplicatestring(line_tkn);
 
-	if (buffer == NULL || buffer == 0)
+	if (!buffer)
 		return (NULL);
 	ptr_buffer = buffer;
 
 	while (*ptr_buffer)
 	{
-		if (flg == 0 && _stringcharacter(delimiter, *ptr_buffer) != NULL)
+		if (_stringcharacter(delimiter, *ptr_buffer) != NULL && flg == 0)
 		{
 			ass_token_size++;
 			flg = 1;
 		}
-		if (flg == 1 && _stringcharacter(delimiter, *ptr_buffer) == NULL)
+		else if (_stringcharacter(delimiter, *ptr_buffer) == NULL && flg == 1)
 		{
 			flg = 0;
 		}
@@ -39,7 +39,7 @@ char **tokenizer(char *line_tkn)
 	while (token_gen)
 	{
 		tokens[x_index] = _duplicatestring(token_gen);
-		if (tokens[x_index] == NULL || tokens[x_index] == 0)
+		if (tokens[x_index] == NULL)
 		{
 			free(tokens);
 			return (NULL);

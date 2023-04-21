@@ -11,7 +11,7 @@ void free_buffers(char **buf)
 
 	bf = 0;
 
-	if (!buf || buf == 0)
+	if (!buf || buf == NULL)
 	{
 		return;
 	}

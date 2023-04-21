@@ -11,9 +11,9 @@ void execution(char *exe, char **command)
 
 	int status;
 
-	char **envro;
+	char **environment;
 
-	envro = environ;
+	environment = environ;
 
 	child_pid = fork();
 
@@ -22,9 +22,9 @@ void execution(char *exe, char **command)
 		perror(exe);
 	}
 
-	if (child_pid == 0 || !child_pid)
+	if (child_pid == 0)
 	{
-		execve(exe, command, envro);
+		execve(exe, command, environment);
 		perror(exe);
 		free(exe);
 		free_buffers(command);

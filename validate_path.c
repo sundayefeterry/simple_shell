@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * validate_path - validates mypath.
  * @mypath: tokener
@@ -22,7 +21,6 @@ char *validate_path(char **mypath, char *command)
 			return (print);
 		}
 		free(print);
-
 		p++;
 	}
 

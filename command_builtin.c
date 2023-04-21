@@ -20,7 +20,7 @@ int command_builtin(char **command, char *commandpath)
 		return (vall);
 	}
 
-	if (_checkingtrings(*command, standardbuiltin.quit) == 0)
+	else if (_checkingtrings(*command, standardbuiltin.quit) == 0)
 	{
 		exit_shell(command, commandpath);
 		return (vall);

@@ -33,7 +33,7 @@ int _len_str(char *lng_str)
 
 	while (*lng_str != '\0')
 		add_str++;
-	lng_str++;
+		lng_str++;
 
 	return (add_str);
 }
@@ -49,7 +49,9 @@ int _compstring(char *str1, char *str2, int num)
 {
 	int input;
 
-	for (input = 0; str1[input] && str2[input] && input < num; input++)
+	input = 0;
+
+	for (str1[input] && str2[input] && input < num; input++)
 	{
 		if (str1[input] != str2[input])
 		{
@@ -80,7 +82,7 @@ char *_duplicatestring(char *str)
 
 	ptr = malloc(sizeof(char) * (len_t + val));
 
-	if (ptr == NULL)
+	if (!ptr)
 	{
 		return (NULL);
 	}

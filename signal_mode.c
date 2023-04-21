@@ -14,5 +14,5 @@ void signal_mode(int mode)
 	(void)mode;
 
 	write(STDERR_FILENO, "\n", val);
-	write(STDERR_FILENO, "&", vall);
+	write(STDERR_FILENO, "$ ", vall);
 }

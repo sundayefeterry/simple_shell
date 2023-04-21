@@ -10,24 +10,24 @@ char *create_new_path(char *np, char *command)
 	size_t f = 0, s = 0;
 	char *bfr;
 
-	if (!command)
+	if (command == 0)
 		command = "";
-	if (!np)
+	if (np == 0)
 		np = "";
 
 	bfr = malloc(sizeof(char) * (_len_str(np) + _len_str(command) + 2));
 
 	if (!bfr)
 		return (NULL);
-	while (np[f] != '\0')
+	while (np[f])
 		bfr[f] = np[f];
-	f++;
+		f++;
 	if (np[f - 1] != '/')
 		bfr[f] = '/';
-	f++;
-	while (command[s] != '\0')
+		f++;
+	while (command[s])
 		bfr[f + s] = command[s];
-	s++;
+		s++;
 
 	bfr[f + s] = '\0';
 
