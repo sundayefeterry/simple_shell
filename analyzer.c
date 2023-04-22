@@ -16,7 +16,7 @@ int analyzer(char **command, char *buffer)
 	{
 		return (val);
 	}
-	else if (command[0] == '/')
+	else if (**command == '/')
 	{
 		execution(command[0], command);
 		return (val);

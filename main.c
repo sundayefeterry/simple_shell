@@ -34,7 +34,7 @@ int main(int argcount, char **argvect, char *env[])
 		command = tokenizer(commandpath);
 		if (command == NULL || *command == NULL || **command == '\0')
 			continue;
-		if (analyser(command, commandpath))
+		if (analyzer(command, commandpath))
 			continue;
 		inpath = find_path();
 		paths = tokenizer(inpath);

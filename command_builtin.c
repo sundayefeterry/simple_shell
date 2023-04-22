@@ -8,6 +8,7 @@
  *
  * Return: 1 done, 0 failed
  */
+
 int command_builtin(char **command, char *commandpath)
 {
 	struct standardbuiltin standardbuiltin =  {"environment", "quit"};
