@@ -20,14 +20,20 @@ char *create_new_path(char *np, char *command)
 	if (!bfr)
 		return (NULL);
 	while (np[f])
+	{
 		bfr[f] = np[f];
 		f++;
+	}
 	if (np[f - 1] != '/')
+	{
 		bfr[f] = '/';
 		f++;
+	}
 	while (command[s])
+	{
 		bfr[f + s] = command[s];
 		s++;
+	}
 
 	bfr[f + s] = '\0';
 
