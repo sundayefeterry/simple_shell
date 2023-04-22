@@ -1,13 +1,14 @@
 #include "main.h"
+
 /**
- *analyser - checks if the function is built in.
+ *analyzer -  checks if the command matches any of the built-in commands and returns the value if it does.
  *@command: tokeniz the user input.
  *@buffer: user inline drived function.
  *
  *Return: 1 if success 0 if not successful
  */
 
-int analyser(char **command, char *buffer)
+int analyzer(char **command, char *buffer)
 {
 	int val = 1;
 
@@ -15,10 +16,11 @@ int analyser(char **command, char *buffer)
 	{
 		return (val);
 	}
-	else if (**command == '/')
+	else if (command[0] == '/')
 	{
 		execution(command[0], command);
 		return (val);
 	}
+
 	return (0);
 }

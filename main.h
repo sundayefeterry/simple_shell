@@ -13,7 +13,7 @@
 #include <stdbool.h>
 
 /* program parts || declaration */
-int analyser(char **command, char *buffer);
+int analyzer(char **command, char *buffer);
 void cue_user(void);
 void signal_mode(int mode);
 char **tokenizer(char *line_tkn);

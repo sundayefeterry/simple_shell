@@ -1,3 +1,4 @@
+**ALL CONCEPT**
 int analyser(char **command, char *buffer); /* analyser to see if it's built in function */
 void cue_user(void); /* cue the user to enter an input */
 void signal_mode(int mode); /* checks if it's in interactive mode */
@@ -14,3 +15,6 @@ char *find_path(void);
 
 /* executes user input commands */
 void free_buffers(char **buf);
+
+**Made some untracked changes**
+**Check README.md && main.h**
