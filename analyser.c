@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 /**
  *analyser - checks if the function is built in.
  *@command: tokeniz the user input.

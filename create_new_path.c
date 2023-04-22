@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 /**
  * create_new_path - integrate np[np] to input
  * @command: user-specified input

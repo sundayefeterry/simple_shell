@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 /**
  * _checkingtrings - this function compares two strings to check if it'str same
  * @str1: checking with str2.

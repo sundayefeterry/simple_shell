@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 /**
  * exit_shell - manages the execution of the shell exit
  * @line: input read from standard input

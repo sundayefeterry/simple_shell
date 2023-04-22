@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 /**
  * free_buffers - frees the buffers
  * @buf: buffer freed

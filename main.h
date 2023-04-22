@@ -1,5 +1,5 @@
-#ifndef SHELL_H
-#define SHELL_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -51,4 +51,4 @@ struct flags
 	bool interactive;
 } flags;
 
-#endif /* SHELL_H */
+#endif /* MAIN_H */

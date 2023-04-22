@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
  * cue_user - this cue is to ask the user for input "&"
