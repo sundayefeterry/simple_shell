@@ -10,11 +10,12 @@ char *create_new_path(char *np, char *command)
 	size_t f = 0, s = 0;
 	char *bfr;
 
-	if (!command)
+	if (!command && !np)
+	{
 		command = "";
-	if (!np)
 		np = "";
-
+	}
+	
 	bfr = malloc(sizeof(char) * (_len_str(np) + _len_str(command) + 2));
 
 	if (!bfr)
