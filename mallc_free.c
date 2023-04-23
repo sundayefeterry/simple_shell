@@ -1,27 +1,30 @@
 #include "main.h"
 /**
- * free_buffers - frees the buffers
- * @buf: buffer freed
- *
- * Return: 0
+ * free_buffer_function - this funstion frees the buffers
+ * @buffer: free buffer
+ * Return: NULL
  */
-void free_buffers(char **buf)
+void free_buffer_function(char **buffer)
 {
 	int bf;
 
 	bf = 0;
 
-	if (!buf || buf == NULL)
+	if (!buffer || buffer == NULL)
 	{
+
 		return;
+
 	}
 
-	while (buf[bf])
+	while (buffer[bf])
 	{
-		free(&buf[bf]);
+
+		free(buffer[bf]);
 		bf++;
+
 	}
 
-	free(buf);
+	free(buffer);
 
 }

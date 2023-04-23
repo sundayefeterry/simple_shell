@@ -24,7 +24,7 @@ void exit_shell(char **command, char *line_tkn);
 void print_out(void);
 void implementation(char *exe, char **command);
 char *find_path(void);
-void free_buffers(char **buf);
+void free_buffer_function(char **buffer);
 
 int _checkingtrings(char *str1, char *str2);
 int _len_str(char *lng_str);
