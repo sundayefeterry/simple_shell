@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * tokenizer - this creates a token from the given user input.
+ * gen_token - this creates a token from the given user input.
  * @line_tkn: line to be tokenized.
  * Return: an []array of strings.
  */
-char **tokenizer(char *line_tkn)
+char **gen_token(char *line_tkn)
 {
 	char *delimiter = " :\t\r\n";
 	char *token_gen = NULL;
@@ -48,7 +48,6 @@ char **tokenizer(char *line_tkn)
 		x_index++;
 	}
 	tokens[x_index] = '\0';
-
 	free(buffer);
 
 	return (tokens);

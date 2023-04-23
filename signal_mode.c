@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * signal_mode - checks to keep track of mode
  * @mode: mode

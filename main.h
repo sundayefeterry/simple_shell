@@ -16,7 +16,7 @@
 int analyzer(char **command, char *buffer);
 void cue_user(void);
 void signal_mode(int mode);
-char **tokenizer(char *line_tkn);
+char **gen_token(char *line_tkn);
 char *validate_path(char **np, char *command);
 char *create_new_path(char *np, char *command);
 int command_builtin(char **command, char *commandpath);
