@@ -3,8 +3,7 @@
  * exit_shell - manages the execution of the shell exit
  * @line_tkn: input read from standard input
  * @command: tokenized command
- *
- * Return: 0
+ * Return: NULL
  */
 void exit_shell(char **command, char *line_tkn)
 {

@@ -1,19 +1,20 @@
 #include "main.h"
+
 /**
- * _putchar - write the character c to standard output
- * @c: the character to print
+ * _putchar - write character to standard output
+ * @c: character
  *
- * Return: 1
- * error, -1 is returned and sets the appropriate value of errno
+ * Return: 1 || error -1 and set value to err_no
  */
+
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
 
 /**
- * print_s - prints string
- * @str: a string is printed
+ * print_s - print string
+ * @str: string
  *
  * Return: prints number of characters
  */

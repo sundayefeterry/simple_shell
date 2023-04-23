@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * cue_user - this cue is to ask the user for input "&"
+ * cue_user - this cue is to ask the user for input.
+ * 
  * Return: NULL
  */
 

@@ -1,7 +1,9 @@
 #include "main.h"
+
 /**
  * gen_token - this creates a token from the given user input.
  * @line_tkn: line to be tokenized.
+ * 
  * Return: an []array of strings.
  */
 char **gen_token(char *line_tkn)
@@ -18,7 +20,9 @@ char **gen_token(char *line_tkn)
 	buffer = _duplicatestring(line_tkn);
 
 	if (!buffer)
+	{
 		return (NULL);
+	}
 	ptr_buffer = buffer;
 
 	while (*ptr_buffer)
