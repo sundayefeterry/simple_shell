@@ -31,13 +31,13 @@ int main(int argcount, char **argvect, char *env[])
 		info.ln_count++;
 		if (commandpath[sizeinline - vall] == '\n')
 			commandpath[sizeinline - vall] = '\0';
-		command = tokenizer(commandpath);
+		command = gen_token(commandpath);
 		if (command == NULL || *command == NULL || **command == '\0')
 			continue;
 		if (analyzer(command, commandpath))
 			continue;
 		inpath = find_path();
-		paths = tokenizer(inpath);
+		paths = gen_token(inpath);
 		linecommand = validate_path(paths, command[0]);
 		if (!linecommand)
 			perror(argvect[0]);
