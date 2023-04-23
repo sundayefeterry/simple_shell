@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * execution - performs instructions provided by users.
+ * implementation - performs instructions provided by users.
  * @command: array of vector pointers **commands.
  * @exe: exe.
  * Return: 0
  */
-void execution(char *exe, char **command)
+void implementation(char *exe, char **command)
 {
 	pid_t child_pid;
 

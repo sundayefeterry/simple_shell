@@ -22,7 +22,7 @@ char *create_new_path(char *np, char *command);
 int command_builtin(char **command, char *commandpath);
 void exit_shell(char **command, char *line);
 void print_out(void);
-void execution(char *exe, char **command);
+void implementation(char *exe, char **command);
 char *find_path(void);
 void free_buffers(char **buf);
 
