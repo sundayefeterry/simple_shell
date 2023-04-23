@@ -1,21 +1,22 @@
 #include "main.h"
+
 /**
- * validate_path - validates mypath.
- * @mypath: tokener
+ * validate_path - validates np.
+ * @np: tokenizer
  * @command: user command
  *
- * Return: mypath || failure: NULL
+ * Return: np || failure: NULL
  */
 
-char *validate_path(char **mypath, char *command)
+char *validate_path(char **np, char *command)
 {
 	int p = 0;
 
 	char *print;
 
-	while (mypath[p])
+	while (np[p])
 	{
-		print = create_new_path(mypath[p], command);
+		print = create_new_path(np[p], command);
 		if (access(print, F_OK | X_OK) == 0)
 		{
 			return (print);
