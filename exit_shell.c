@@ -1,14 +1,14 @@
 #include "main.h"
 /**
  * exit_shell - manages the execution of the shell exit
- * @line: input read from standard input
+ * @line_tkn: input read from standard input
  * @command: tokenized command
  *
  * Return: 0
  */
-void exit_shell(char **command, char *line)
+void exit_shell(char **command, char *line_tkn)
 {
-	free(line);
+	free(line_tkn);
 	free_buffers(command);
 	exit(0);
 }

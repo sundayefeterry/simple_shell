@@ -20,7 +20,7 @@ char **gen_token(char *line_tkn);
 char *validate_path(char **np, char *command);
 char *create_new_path(char *np, char *command);
 int command_builtin(char **command, char *commandpath);
-void exit_shell(char **command, char *line);
+void exit_shell(char **command, char *line_tkn);
 void print_out(void);
 void implementation(char *exe, char **command);
 char *find_path(void);
