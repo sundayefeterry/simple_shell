@@ -42,7 +42,7 @@ int main(int argcount, char **argvect, char *env[])
 		if (!linecommand)
 			perror(argvect[0]);
 		else
-			execution(linecommand, command);
+			implementation(linecommand, command);
 	}
 	if (!sizeinline && flags.interactive)
 		write(STDERR_FILENO, "\n", 1);
