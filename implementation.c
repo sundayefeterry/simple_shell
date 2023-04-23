@@ -27,7 +27,7 @@ void implementation(char *exe, char **command)
 		execve(exe, command, environment);
 		perror(exe);
 		free(exe);
-		free_buffers(command);
+		free_buffer_function(command);
 		exit(98);
 	}
 	else

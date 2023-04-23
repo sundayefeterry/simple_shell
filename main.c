@@ -21,8 +21,8 @@ int main(int argcount, char **argvect, char *env[])
 	signal(SIGINT, signal_mode);
 	while (vl)
 	{
-		free_buffers(command);
-		free_buffers(paths);
+		free_buffer_function(command);
+		free_buffer_function(paths);
 		free(linecommand);
 		cue_user();
 		sizeinline = getline(&commandpath, &buffersize, stdin);
