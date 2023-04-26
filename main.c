@@ -8,43 +8,43 @@
  */
 int main(int argcount, char **argvect, char *env[])
 {
-	char *linecommand = NULL, *inpath = NULL, *commandpath = NULL, **command = NULL, **paths = NULL;
-	size_t buffersize = 0, sizeinline = 0;
-	int vl = 1, vall = -1;
+	char *lc = NULL, *inpath = NULL, *cp = NULL, **cmd = NULL, **pt = NULL;
+	size_t fr = 0, sz = 0;
+	int vl = 1, vll = -1;
 	(void)argvect, (void)env;
 	if (argcount < vl)
 	{
-		return (vall);
+		return (vll);
 	}
 	signal(SIGINT, signal_mode);
 	while (vl)
-		free_buffer_function(command);
-		free_buffer_function(paths);
-		free(linecommand);
+		free_buffer_function(cmd);
+		free_buffer_function(pt);
+		free(lc);
 		cue_user();
-		sizeinline = getline(&commandpath, &buffersize, stdin);
-		if (!sizeinline)
+		sz = getline(&cp, &fr, stdin);
+		if (!sz)
 			break;
 
 		info.ln_count++;
-		if (commandpath[sizeinline - vall] == '\n')
-			commandpath[sizeinline - vall] = '\0';
-		command = gen_token(commandpath);
-		if (command == NULL || *command == NULL || **command == '\0')
+		if (cp[sz - vll] == '\n')
+			cp[sz - vll] = '\0';
+		cmd = gen_token(cp);
+		if (cmd == NULL || *cmd == NULL || **cmd == '\0')
 			continue;
 
-		if (analyzer(command, commandpath))
+		if (analyzer(cmd, cp))
 			continue;
 
 		inpath = find_path();
-		paths = gen_token(inpath);
-		linecommand = validate_path(paths, command[0]);
-		if (!linecommand)
+		pt = gen_token(inpath);
+		lc = validate_path(pt, cmd[0]);
+		if (!lc)
 			perror(argvect[0]);
 		else
-			implementation(linecommand, command);
-	if (!sizeinline && flags.interactive)
+			implementation(lc, cmd);
+	if (!sz && flags.interactive)
 		write(STDERR_FILENO, "\n", vl);
-	free(commandpath);
+	free(cp);
 	return (0);
 }
