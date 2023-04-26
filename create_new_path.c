@@ -2,10 +2,10 @@
 
 /**
  * create_new_path - integrate np[np] to input
- * 
+ *
  * @command: user-specified input
  * @np: np of input
- * 
+ *
  * Return: np on success or NULL
  */
 
@@ -22,7 +22,7 @@ char *create_new_path(char *np, char *command)
 		command = "";
 		np = "";
 	}
-	
+
 	bfr = malloc(sizeof(char) * (_len_str(np) + _len_str(command) + val));
 
 	if (bfr == NULL)

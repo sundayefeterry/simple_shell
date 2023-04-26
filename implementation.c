@@ -4,7 +4,7 @@
  * implementation - performs instructions provided by users.
  * @command: array of vector pointers **commands.
  * @exe: exe.
- * 
+ *
  * Return: 0
  */
 

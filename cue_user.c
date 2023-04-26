@@ -2,7 +2,7 @@
 
 /**
  * cue_user - this cue is to ask the user for input.
- * 
+ *
  * Return: NULL
  */
 

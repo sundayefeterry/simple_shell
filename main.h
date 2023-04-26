@@ -12,6 +12,8 @@
 #include <time.h>
 #include <stdbool.h>
 
+#define BUFFER_SIZE 1024
+
 /* program parts || declaration */
 int analyzer(char **command, char *buffer);
 void cue_user(void);

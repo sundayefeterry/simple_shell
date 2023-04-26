@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *analyzer -  checks if the command matches any of the built-in commands and returns the value if it does.
+ *analyzer -  checks if the command matches any of the built-in commands.
  *@command: tokeniz the user input.
  *@buffer: user inline drived function.
  *

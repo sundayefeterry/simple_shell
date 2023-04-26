@@ -4,7 +4,7 @@
  * _checkingtrings - this function compares two strings to check if it'str same
  * @str1: checking with str2.
  * @str2: checking with str1.
- * 
+ *
  * Return: difference between 2 strings..
  */
 int _checkingtrings(char *str1, char *str2)
@@ -27,7 +27,7 @@ int _checkingtrings(char *str1, char *str2)
 /**
  * _len_str - this function adss to the length of string passed.
  * @lng_str: named string.
- * 
+ *
  * Return: length.
  */
 int _len_str(char *lng_str)
@@ -47,7 +47,7 @@ int _len_str(char *lng_str)
  * @str1: compare str2 and str1.
  * @str2: compared str1 and str2
  * @num: number of bytes of strings.
- * 
+ *
  * Return: num;
  */
 int _compstring(char *str1, char *str2, int num)
@@ -67,7 +67,7 @@ int _compstring(char *str1, char *str2, int num)
 /**
  * _duplicatestring - this function dupicate string
  * @str: duplicated string
- * 
+ *
  * Return: *duplicated string
  */
 char *_duplicatestring(char *str)
@@ -104,7 +104,7 @@ char *_duplicatestring(char *str)
  * _stringcharacter - pionter to a character in string
  * @str: string
  * @strchar: pionter string
- * 
+ *
  * Return: pointer to first string occurence & NULL if not found
  */
 char *_stringcharacter(char *str, char strchar)
