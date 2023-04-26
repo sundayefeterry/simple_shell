@@ -9,12 +9,9 @@ char **gen_token(char *line_tkn)
 {
 	char *delimiter = " :\t\r\n";
 	char *token_gen = NULL;
-	char **tokens = NULL;
-	char *buffer = NULL;
-	char *ptr_buffer = NULL;
+	char **tokens = NULL, *buffer = NULL, *ptr_buffer = NULL;
 	int ass_token_size = 1;
-	size_t x_index = 0;
-	size_t flg = 0;
+	size_t x_index = 0, flg = 0;
 
 	buffer = _duplicatestring(line_tkn);
 

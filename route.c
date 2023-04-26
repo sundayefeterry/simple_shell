@@ -2,7 +2,7 @@
 
 /**
  * find_path - locate and execute the command from the global environment.
- * 
+ *
  * Return: 0
  */
 

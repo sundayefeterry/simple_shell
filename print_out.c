@@ -2,7 +2,7 @@
 
 /**
  * print_out - prints the string to --> standard output
- * 
+ *
  * Return: NULL
  */
 
