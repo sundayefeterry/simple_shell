@@ -10,7 +10,7 @@ int main(int argcount, char **argvect, char *env[])
 {
 	char *lc = NULL, *inpath = NULL;
 	char *cp = NULL;
-	char **cmd = NULL;
+	char **cmd = NULL, **pt = NULL;
 	size_t fr = 0, sz = 0;
 	int vl = 1;
 	int vll = -1;
@@ -23,6 +23,7 @@ int main(int argcount, char **argvect, char *env[])
 	while (vl)
 	{
 		free_buffer_function(cmd);
+		free_buffer_function(pt);
 		free(lc);
 		cue_user();
 		sz = getline(&cp, &fr, stdin);
@@ -37,7 +38,7 @@ int main(int argcount, char **argvect, char *env[])
 		if (analyzer(cmd, cp))
 			continue;
 		inpath = find_path();
-		pt = gen_token(inpath);
+		cmd = gen_token(inpath);
 		lc = validate_path(pt, cmd[0]);
 		if (!lc)
 			perror(argvect[0]);
