@@ -24,28 +24,28 @@ int main(int argcount, char **argvect, char *env[])
 	{
 		free_buffer_function(cmd);
 		free_buffer_function(pt);
-		free(lc);
+		free(inpath);
 		cue_user();
-		sz = getline(&cp, &fr, stdin);
+		sz = getline(&lc, &fr, stdin);
 		if (!sz)
 			break;
 		info.ln_count++;
-		if (cp[sz - vll] == '\n')
-			cp[sz - vll] = '\0';
-		cmd = gen_token(cp);
+		if (lc[sz - vll] == '\n')
+			lc[sz - vll] = '\0';
+		cmd = gen_token(lc);
 		if (cmd == NULL || *cmd == NULL || **cmd == '\0')
 			continue;
-		if (analyzer(cmd, cp))
+		if (analyzer(cmd, lc))
 			continue;
-		inpath = find_path();
-		cmd = gen_token(inpath);
-		lc = validate_path(pt, cmd[0]);
+		cp = find_path();
+		pt = gen_token(cp);
+		inpath = validate_path(pt, cmd[0]);
 		if (!lc)
 			perror(argvect[0]);
-		implementation(lc, cmd);
+		implementation(inpath, cmd);
 	}
 	if (!sz && flags.interactive)
 		write(STDERR_FILENO, "\n", vl);
-	free(cp);
+	free(lc);
 	return (0);
 }
