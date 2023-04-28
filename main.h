@@ -12,9 +12,9 @@
 #include <time.h>
 #include <stdbool.h>
 
-
 #define BUFFER_SIZE 1024
-
+#define DELIM " \t\r\n\a"
+#define UNUSED(x) (void)(x)
 
 /* program parts || declaration */
 int analyzer(char **command, char *buffer);
@@ -30,6 +30,8 @@ void implementation(char *exe, char **command);
 char *find_path(void);
 void free_buffer_function(char **buffer);
 
+char *create_new_path(char *np, char *command);
+
 int _checkingtrings(char *str1, char *str2);
 int _len_str(char *lng_str);
 int _compstring(char *str1, char *str2, int num);
@@ -39,20 +41,19 @@ char *_stringcharacter(char *str, char strchar);
 extern char **environ;
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 
-/* */
 struct standardbuiltin
 {
-	char *environment, *quit;
+        char *environment, *quit;
 } standardbuiltin;
 
 struct info
 {
-	int final_exit, ln_count;
+        int final_exit, ln_count;
 } info;
 
 struct flags
 {
-	bool interactive;
+        bool interactive;
 } flags;
 
 #endif /* MAIN_H */
