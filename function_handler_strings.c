@@ -54,7 +54,7 @@ int _compstring(char *str1, char *str2, int num)
 {
 	int input = 0;
 
-	for (str1[input] && str2[input] && input < num; input++)
+	for (input = 0; str1[input] && str2[input] && input < num; input++)
 	{
 		if (str1[input] != str2[input])
 		{
@@ -90,7 +90,7 @@ char *_duplicatestring(char *str)
 	{
 		return (NULL);
 	}
-	for (*str != '\0'; str++, input++)
+	for (input = 0; *str != '\0'; str++, input++)
 	{
 		ptr[input] = str[0];
 	}

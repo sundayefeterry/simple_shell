@@ -27,7 +27,7 @@ int main(int argcount, char **argvect, char *env[])
 		free(inpath);
 		cue_user();
 		sz = getline(&lc, &fr, stdin);
-		if (!sz && sz < 0)
+		if (!sz)
 			break;
 		info.ln_count++;
 		if (lc[sz - vl] == '\n')
@@ -44,11 +44,8 @@ int main(int argcount, char **argvect, char *env[])
 			perror(argvect[0]);
 		implementation(inpath, cmd);
 	}
-	if (sz < 0 && flags.interactive)
+	if (!sz && flags.interactive)
 		write(STDERR_FILENO, "\n", vl);
 	free(lc);
-	free(cmd);
-	free(inpath);
-	free(pt);
 	return (0);
 }
