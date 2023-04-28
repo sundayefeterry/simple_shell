@@ -11,6 +11,7 @@
 int analyzer(char **command, char *buffer)
 {
 	int val = 1;
+	int ng = 0;
 
 	if (command_builtin(command, buffer))
 	{
@@ -18,7 +19,7 @@ int analyzer(char **command, char *buffer)
 	}
 	else if (**command == '/')
 	{
-		implementation(command[0], command);
+		implementation(command[ng], command);
 		return (val);
 	}
 

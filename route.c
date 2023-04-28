@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * find_path - locate and execute the command from the global environment.
+ * find_path - locate and execute the command from the global env.
  *
  * Return: 0
  */
@@ -11,15 +11,15 @@ char *find_path(void)
 	int src;
 	int val = 5;
 
-	char **environment = environ;
+	char **env = environ;
 
 	char *path = NULL;
 
-	while (*environment)
+	while (*env)
 	{
-		if (_compstring(*environment, "PATH=", val) == 0)
+		if (_compstring(*env, "PATH=", val) == 0)
 		{
-			path = *environment;
+			path = *env;
 			while (*path && src < val)
 			{
 				path++;
@@ -27,7 +27,7 @@ char *find_path(void)
 			}
 			return (path);
 		}
-		environment++;
+		env++;
 	}
 	return (NULL);
 }

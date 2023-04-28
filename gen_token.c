@@ -35,7 +35,7 @@ char **gen_token(char *line_tkn)
 	while (token_gen)
 	{
 		tokens[x_index] = _duplicatestring(token_gen);
-		if (!tokens[x_index])
+		if (tokens[x_index] == NULL)
 		{
 			free(tokens);
 			return (NULL);

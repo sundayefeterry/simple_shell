@@ -27,11 +27,11 @@ int main(int argcount, char **argvect, char *env[])
 		free(inpath);
 		cue_user();
 		sz = getline(&lc, &fr, stdin);
-		if (!sz)
+		if (!sz && sz < 0)
 			break;
 		info.ln_count++;
-		if (lc[sz - vll] == '\n')
-			lc[sz - vll] = '\0';
+		if (lc[sz - vl] == '\n')
+			lc[sz - vl] = '\0';
 		cmd = gen_token(lc);
 		if (cmd == NULL || *cmd == NULL || **cmd == '\0')
 			continue;
@@ -40,11 +40,11 @@ int main(int argcount, char **argvect, char *env[])
 		cp = find_path();
 		pt = gen_token(cp);
 		inpath = validate_path(pt, cmd[0]);
-		if (!lc)
+		if (!inpath)
 			perror(argvect[0]);
 		implementation(inpath, cmd);
 	}
-	if (!sz && flags.interactive)
+	if (sz < 0 && flags.interactive)
 		write(STDERR_FILENO, "\n", vl);
 	free(lc);
 	return (0);

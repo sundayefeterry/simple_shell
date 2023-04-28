@@ -52,9 +52,9 @@ int _len_str(char *lng_str)
  */
 int _compstring(char *str1, char *str2, int num)
 {
-	int input;
+	int input = 0;
 
-	for (input = 0; str1[input] && str2[input] && input < num; input++)
+	for (str1[input] && str2[input] && input < num; input++)
 	{
 		if (str1[input] != str2[input])
 		{
@@ -73,7 +73,7 @@ int _compstring(char *str1, char *str2, int num)
 char *_duplicatestring(char *str)
 {
 	char *ptr;
-	int input;
+	int input = 0;
 	int len_t;
 	int val = 1;
 
@@ -90,7 +90,7 @@ char *_duplicatestring(char *str)
 	{
 		return (NULL);
 	}
-	for (input = 0; *str != '\0'; str++, input++)
+	for (*str != '\0'; str++, input++)
 	{
 		ptr[input] = str[0];
 	}

@@ -17,7 +17,7 @@ char *create_new_path(char *np, char *command)
 
 	char *bfr;
 
-	if (!command && !np)
+	if (command == 0 && np == 0)
 	{
 		command = "";
 		np = "";

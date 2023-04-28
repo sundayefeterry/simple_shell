@@ -13,21 +13,22 @@ void implementation(char *exe, char **command)
 	pid_t child_pid;
 
 	int status;
+	int ng = 0;
 
-	char **environment;
+	char **env;
 
-	environment = environ;
+	env = environ;
 
 	child_pid = fork();
 
-	if (child_pid < 0)
+	if (child_pid < ng)
 	{
 		perror(exe);
 	}
 
-	if (child_pid == 0)
+	if (child_pid == ng)
 	{
-		execve(exe, command, environment);
+		execve(exe, command, env);
 		perror(exe);
 		free(exe);
 		free_buffer_function(command);

@@ -11,17 +11,19 @@
 
 int command_builtin(char **command, char *commandpath)
 {
-	struct standardbuiltin standardbuiltin =  {"environment", "quit"};
+	int ng = 0;
+
+	struct standardbuiltin standardbuiltin =  {"env", "exit"};
 
 	int vall = 1;
 
-	if (_checkingtrings(*command, standardbuiltin.environment) == 0)
+	if (_checkingtrings(*command, standardbuiltin.env) == ng)
 	{
 		print_out();
 		return (vall);
 	}
 
-	else if (_checkingtrings(*command, standardbuiltin.quit) == 0)
+	else if (_checkingtrings(*command, standardbuiltin.exit) == ng)
 	{
 		exit_shell(command, commandpath);
 		return (vall);
