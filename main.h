@@ -14,7 +14,8 @@
 
 
 #define BUFFER_SIZE 1024
-
+#define DELIM " \t\r\n\a"
+#define UNUSED(x) (void)(x)
 
 /* program parts || declaration */
 int analyzer(char **command, char *buffer);
@@ -29,6 +30,8 @@ void print_out(void);
 void implementation(char *exe, char **command);
 char *find_path(void);
 void free_buffer_function(char **buffer);
+
+char *create_new_path(char *np, char *command);
 
 int _checkingtrings(char *str1, char *str2);
 int _len_str(char *lng_str);
