@@ -47,5 +47,8 @@ int main(int argcount, char **argvect, char *env[])
 	if (sz < 0 && flags.interactive)
 		write(STDERR_FILENO, "\n", vl);
 	free(lc);
+	free(cmd);
+	free(inpath);
+	free(pt);
 	return (0);
 }
