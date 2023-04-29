@@ -18,17 +18,17 @@
 
 struct standardbuiltin
 {
-        char *env, *exit;
+	char *env, *exit;
 } standardbuiltin;
 
 struct info
 {
-        int final_exit, ln_count;
+	int final_exit, ln_count;
 } info;
 
 struct flags
 {
-        bool interactive;
+	bool interactive;
 } flags;
 
 /* program parts || declaration */
